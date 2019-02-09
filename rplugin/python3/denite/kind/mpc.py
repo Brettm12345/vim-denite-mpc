@@ -11,10 +11,8 @@ from ..util import error
 
 import os
 import site
-path_to_parent_dir = os.path.abspath(os.path.dirname(__file__) + '/../')
-site.addsitedir(path_to_parent_dir)
 
-from source.mpc import Source
+from ..source.mpc import Source
 
 
 class Kind(Base):
