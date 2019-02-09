@@ -6,9 +6,16 @@
 
 import re
 from .base import Base
-from ..source.mpc import Source
 from ..socket import Socket
 from ..util import error
+
+import os
+import site
+path_to_parent_dir = os.path.abspath(os.path.dirname(__file__) + '/../')
+path_to_modules = os.path.join(path_to_parent_dir, 'source')
+site.addsitedir(path_to_modules)
+
+from mpc import Source
 
 
 class Kind(Base):
